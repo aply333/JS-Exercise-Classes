@@ -147,6 +147,10 @@ class Instructor extends Lambdasian{
   grade(student, subject){
     return `${student.name} receives a perfect score on ${subject}`;
   }
+  assesment(student){
+    let GradeChange = student.grade-Math.floor(Math.random()*101); 
+    student.grade = GradeChange;
+  }
 }
 
 /*
@@ -170,6 +174,7 @@ class Student extends Lambdasian{
     this.previousBackground = lambdasianAttr.previousBackground;
     this.className = lambdasianAttr.className;
     this.favSubjects = lambdasianAttr.favSubjects;
+    this.grade = lambdasianAttr.grade;
   }
   listSubjects(){
     return this.favSubjects.toString();
@@ -179,6 +184,13 @@ class Student extends Lambdasian{
   }
   sprintChallenge(subject){
     return `${this.name} has begun sprint challenge on ${subject}`
+  }
+  isEndorced(){
+    if(this.grade>69){
+      return true;
+    }else{
+      return false;
+    }
   }
 }
 
@@ -218,6 +230,7 @@ class ProjectManager extends Instructor{
       + This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
       + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 */
+class 
 
 ///////// END OF CHALLENGE /////////
 ///////// END OF CHALLENGE /////////
